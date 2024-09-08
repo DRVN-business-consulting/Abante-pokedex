@@ -18,28 +18,28 @@ export default function App() {
 
 
   return (
-    <View style={[styles.container, (theme == 'light' ? styles.background : styles.backgroundDark)]}>
+    <View style={[styles.container, (theme ? styles.background : styles.backgroundDark)]}>
       <Text
-        style={[(theme == 'light' ? styles.text : styles.textDark), { fontSize: 30, fontWeight: 'bold', fontStyle: 'italic' }]}
+        style={[(theme ? styles.text : styles.textDark), { fontSize: 30, fontWeight: 'bold', fontStyle: 'italic' }]}
       >
         Login
       </Text>
 
       <TextInput
-        style={(theme == 'light' ? styles.textInput : styles.textInputDark)}
+        style={(theme ? styles.textInput : styles.textInputDark)}
         value={token}
         onChangeText={setToken}
         placeholder='token'
-        placeholderTextColor={(theme == 'light') ? '#121212' : '#FFF'}
+        placeholderTextColor={(theme) ? '#121212' : '#FFF'}
         secureTextEntry
       />
 
       <TouchableOpacity
-        style={(theme == 'light' ? styles.button : styles.buttonDark)}
+        style={(theme ? styles.button : styles.buttonDark)}
         onPress={validate}
       >
         <Text
-          style={(theme == 'light' ? styles.text : styles.textDark)} >
+          style={(theme ? styles.text : styles.textDark)} >
           Log in
         </Text>
       </TouchableOpacity>

@@ -1,19 +1,10 @@
 import React from 'react'
 
-const Theme = React.createContext({
-    light: {
-        backgroundColor: '#121212',
-
-    },
-    dark: {
-        backgroundColor: '#FFF',
-
-    }
-})
+const Theme = React.createContext(true)
 
 export const ThemeProvider = ({ children }) => {
 
-    const [theme, setTheme] = React.useState('dark')
+    const [theme, setTheme] = React.useState(true)
 
     return (
         <Theme.Provider value={{ theme, setTheme }}>
