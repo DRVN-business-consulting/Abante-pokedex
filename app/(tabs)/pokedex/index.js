@@ -53,7 +53,7 @@ export default function PokedexScreen() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://192.168.1.14:80/pokemon');
+      const response = await fetch('http://pokemon-api-nssw.onrender.com/pokemon');
       let json = await response.json();
 
       const uniqueData = json.filter((item, index, self) =>

@@ -70,7 +70,7 @@ export default function PokemonDetail() {
 
   const fetchPokemonData = async () => {
     try {
-      const response = await fetch(`http://192.168.1.14:80/pokemon/${id}`);
+      const response = await fetch(`http://pokemon-api-nssw.onrender.com/pokemon/${id}`);
       if (!response.ok) {
         throw new Error('Failed to fetch Pokemon data');
       }
@@ -107,6 +107,7 @@ export default function PokemonDetail() {
         source={{ uri: pokemon.image.hires }}
       />
       <View style={styles(theme).infoContainer}>
+        <Text style={styles(theme).subTitle}>Id#: {pokemon.id}</Text>
         <Text style={styles(theme).subTitle}>Types: {pokemon.type.join(', ')}</Text>
         <Text style={styles(theme).subTitle}>Species: {pokemon.species}</Text>
         <Text style={styles(theme).description}>{pokemon.description}</Text>
